@@ -1,0 +1,37 @@
+import javax.swing.JOptionPane;
+
+public class CalculateTwoNumbers {
+    public static void main(String[] args) {
+        String strNum1 = JOptionPane.showInputDialog(null,
+                "Nhập số thực thứ nhất: ", "Nhập liệu",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        String strNum2 = JOptionPane.showInputDialog(null,
+                "Nhập số thực thứ hai: ", "Nhập liệu",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        double num1 = Double.parseDouble(strNum1);
+        double num2 = Double.parseDouble(strNum2);
+        
+        double sum = num1 + num2;
+        double difference = Math.abs(num1 - num2); // Tính hiệu số (trị tuyệt đối)
+        double product = num1 * num2;
+        
+        String result = "Hai số vừa nhập: " + num1 + " và " + num2 + "\n";
+        result += "Tổng: " + sum + "\n";
+        result += "Hiệu: " + difference + "\n";
+        result += "Tích: " + product + "\n";
+        
+        if (num2 == 0) {
+            result += "Thương: Không thể chia cho 0!";
+        } else {
+            double quotient = num1 / num2;
+            result += "Thương: " + quotient;
+        }
+        
+        JOptionPane.showMessageDialog(null, result,
+                "Kết quả tính toán", JOptionPane.INFORMATION_MESSAGE);
+        
+        System.exit(0);
+    }
+}
